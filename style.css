@@ -1,14 +1,16 @@
+/* --- Font Definitions --- */
 :root {
-    --font-heading: 'JetBrains Mono', monospace;
-    --font-body: 'Inter', sans-serif;
-    --font-code: 'JetBrains Mono', monospace; /* Can be the same as heading or a dedicated monospaced */
+    --font-heading: 'JetBrains Mono', monospace; /* JetBrains for headlines */
+    --font-body: 'Inter', sans-serif; /* Inter for main body text */
+    --font-code: 'JetBrains Mono', monospace; /* JetBrains for code blocks */
 
-    /* Color Palette (from our previous discussion) */
+    /* Color Palette */
     --color-primary-bg: #F5F5DC; /* Creamy White/Pale Yellow */
     --color-accent-gold: #FFD700; /* Golden Yellow */
     --color-secondary-text: #808080; /* Gray */
     --color-secondary-accent: #FFA500; /* Orange/Amber */
-    --color-primary-text: #696969; /* Darker Gray */
+    --color-primary-text: #696969; /* Darker Gray for general text */
+    --color-heading-text: #1A1A1A; /* NEW: Almost black grey for headings */
 }
 
 /* --- General Body Styles --- */
@@ -21,10 +23,10 @@ body {
     padding: 20px; /* Some padding around the content */
 }
 
-/* --- Headings (JetBrains Mono) --- */
+/* --- Headings (JetBrains Mono for Impact, with new dark grey) --- */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading); /* JetBrains Mono for all headings */
-    color: var(--color-primary-text); /* Or a specific accent color if desired */
+    color: var(--color-heading-text); /* Using the new almost black grey for headings */
     margin-bottom: 0.5em; /* Adjust as needed */
     line-height: 1.2;
 }
@@ -32,12 +34,14 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 3em; /* Large for impact */
     font-weight: 700; /* Bold */
-    color: var(--color-accent-gold); /* Make H1 stand out with accent */
+    color: var(--color-accent-gold); /* Keep H1 gold to make it pop even more! */
+    letter-spacing: -1px; /* Optional: adjust for mono fonts in headings */
 }
 
 h2 {
     font-size: 2.2em;
     font-weight: 500; /* Medium weight */
+    color: var(--color-heading-text); /* Using the new almost black grey */
 }
 
 /* --- Specific Elements (JetBrains Mono for "code/terminal" feel) --- */
@@ -47,13 +51,16 @@ pre, code {
     padding: 2px 5px;
     border-radius: 3px;
     font-size: 0.9em;
+    white-space: pre-wrap; /* Ensures code wraps */
+    word-break: break-all; /* Breaks long words if necessary */
+    color: var(--color-heading-text); /* Dark code text */
 }
 
-/* --- Buttons / Call-to-Actions (Accent color with Inter or JetBrains Mono) --- */
+/* --- Buttons / Call-to-Actions (Inter for readability) --- */
 button, .button {
-    font-family: var(--font-heading); /* Or var(--font-body) depending on desired look */
+    font-family: var(--font-body); /* Inter for readability on buttons */
     background-color: var(--color-accent-gold);
-    color: white; /* Or a dark gray */
+    color: white; /* Or a dark grey, but white often pops more on gold */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -64,11 +71,6 @@ button, .button {
 
 button:hover, .button:hover {
     background-color: var(--color-secondary-accent); /* Orange on hover */
-}
-
-body{
-background-color: #F5F5DC;
-font-family: var(--font-body);
 }
 
 #container{
@@ -88,6 +90,7 @@ background-color: #F5F5DC;
 color: #696969;
 border: 1px solid #808080;
 }
+
 
 #header{
 margin-bottom: 10px;
